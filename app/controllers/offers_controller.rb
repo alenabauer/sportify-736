@@ -5,6 +5,10 @@ class OffersController < ApplicationController
 
   # GET /offers/1/edit
   def edit
+    @offer = Offer.find(params[:id])
+  end
+
+  def update
   end
 
   # POST /offers
@@ -17,7 +21,7 @@ class OffersController < ApplicationController
       render :new
     end
   end
-  
+
   def show
     @offer = Offer.find(params[:id])
   end
@@ -25,7 +29,7 @@ class OffersController < ApplicationController
   def index
     @offers = Offer.all
   end
-  
+
   private
 
   def offer_params
