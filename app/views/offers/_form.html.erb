@@ -1,0 +1,16 @@
+
+<%= simple_form_for(@offer) do |f| %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :equipment_type %>
+    <%= f.input :equipment_category %>
+    <%# <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
