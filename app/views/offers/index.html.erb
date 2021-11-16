@@ -1,6 +1,8 @@
   <h1>Your offers</h1>
 <div>
   <% @offers.each do |offer| %>
+    <%= cl_image_tag("a57iusrmqyd6cldwc0xa",
+        width: 400, height: 300, crop: :fill) %>
     <h2><%= offer.name %></h2>
     <p><strong>Type: </strong><%= offer.equipment_type %></p>
     <p><strong>Description: </strong><%= offer.description %></p>
