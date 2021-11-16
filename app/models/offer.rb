@@ -1,4 +1,4 @@
-CATEGORIES = ['climbing', 'cycling', 'golf', 'snow sports', 'aquatic sports', 'ball games']
+CATEGORIES = ['climbing', 'cycling', 'snow sports', 'water sports', 'ball games']
 
 class Offer < ApplicationRecord
   belongs_to :user
