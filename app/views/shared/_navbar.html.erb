@@ -15,21 +15,32 @@
         <li class="nav-item">
           <%= link_to "Create an Offer", new_offer_path, class: "nav-link", id: "create-offer-btn" %>
         </li>
-        <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "Dashboard", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Sign-out", destroy_user_session_path, method: "delete", class: "nav-link" %>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Log In", new_user_session_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
-          </li>
-        <% end %>
+        <div class="my-dropdown">
+          <div class="my-dropdown-circle">
+            <% if user_signed_in? %>
+              <%= current_user.first_name.chars.first.capitalize %><%= current_user.last_name.chars.first.capitalize %>
+            <% else %>
+              ...
+            <% end %>
+          </div>
+          <div class="dropdown-content">
+            <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to "Dashboard", "#", class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Sign-out", destroy_user_session_path, method: "delete", class: "nav-link" %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "Log In", new_user_session_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
+              </li>
+            <% end %>
+          </div>
+        </div>
       </ul>
     </div>
   </div>
