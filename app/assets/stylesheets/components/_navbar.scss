@@ -1,6 +1,12 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $indigo-blue;
+  .nav-item a {
+    color: white;
+    &:hover {
+      color: $aero-blue;
+    }
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,12 +14,16 @@
 }
 
 .navbar-lewagon .navbar-brand {
-  color: #F8684E;
+  color: $aero-blue;
   display: flex;
   align-items: baseline;
   font-size: 16px;
+  transition: .5s;
   i {
     font-size: 24px;
     margin-right: 8px;
+  }
+  &:hover {
+    color: $tomato;
   }
 }
