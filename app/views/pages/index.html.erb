@@ -1,0 +1,10 @@
+  <h1>Your offers</h1>
+<div>
+  <% @offers.each do |offer| %>
+    <h2><%= offer.name %></h2>
+    <p><strong>Type: </strong><%= offer.equipment_type %></p>
+    <p><strong>Description: </strong><%= offer.description %></p>
+    <h4>$<%= offer.price %>/day</h4>
+    <p><strong>Category: </strong><%= offer.equipment_category %></p>
+  <% end %>
+</div>
