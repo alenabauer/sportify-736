@@ -1,0 +1,26 @@
+.homepage-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 72px auto;
+  .homepage-card {
+    width: 20vw;
+    height: 20vw;
+    background: $gold;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    box-shadow: 2px 2px 16px hsla(0, 0%, 0%, .5);
+    transition: .5s;
+    &:hover {
+      transform: scale(1.05);
+      background: $tomato;
+      cursor: pointer;
+    }
+  }
+  .homepage-card img {
+    width: 100%;
+  }
+}
