@@ -6,7 +6,7 @@
     <%= f.input :description %>
     <%= f.input :price %>
     <%= f.input :equipment_type %>
-    <%= f.input :equipment_category %>
+    <%= f.input :equipment_category, collection: ['climbing', 'cycling', 'snow sports', 'water sports', 'ball games'] %>
     <%# <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   </div>
 
