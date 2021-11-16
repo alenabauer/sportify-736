@@ -27,3 +27,15 @@
     color: $tomato;
   }
 }
+
+#create-offer-btn {
+  background: $aero-blue;
+  border-radius: 16px;
+  color: $indigo-blue;
+  box-shadow: 2px 2px 16px hsla(0, 0%, 0%, .5);
+  font-weight: 700;
+  &:hover {
+    background: $tomato;
+    color: white;
+  }
+}

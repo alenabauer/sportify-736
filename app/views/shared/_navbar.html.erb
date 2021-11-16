@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-lewagon fixed-top">
   <div class="container">
     <%= link_to root_path, class: "navbar-brand" do %>
       <i class="fas fa-skiing-nordic"></i>
@@ -13,7 +13,7 @@
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Create an Offer", new_offer_path, class: "nav-link" %>
+          <%= link_to "Create an Offer", new_offer_path, class: "nav-link", id: "create-offer-btn" %>
         </li>
         <% if user_signed_in? %>
           <li class="nav-item">
