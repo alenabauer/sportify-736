@@ -53,9 +53,11 @@
     align-items: center;
     font-weight: 700;
     color: $indigo-blue;
-    transition: .5s;
+    transition: .3s;
+    box-shadow: 2px 2px 16px hsla(0, 0%, 0%, .5);
     &:hover {
       background: $tomato;
+      cursor: pointer;
     }
   }
   .dropdown-content {

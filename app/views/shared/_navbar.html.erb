@@ -9,9 +9,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <%= link_to "Home", root_path, class: "nav-link" %>
-        </li>
         <li class="nav-item">
           <%= link_to "Create an Offer", new_offer_path, class: "nav-link", id: "create-offer-btn" %>
         </li>
@@ -20,7 +17,7 @@
             <% if user_signed_in? %>
               <%= current_user.first_name.chars.first.capitalize %><%= current_user.last_name.chars.first.capitalize %>
             <% else %>
-              ...
+              <i class="fas fa-ellipsis-h"></i>
             <% end %>
           </div>
           <div class="dropdown-content">
