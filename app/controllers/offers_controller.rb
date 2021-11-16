@@ -9,6 +9,12 @@ class OffersController < ApplicationController
   end
 
   def update
+    offer = Offer.find(params[:id])
+    if offer.update(offer_params)
+      redirect_to offer_path(offer)
+    else
+      render :edit
+    end
   end
 
   # POST /offers
