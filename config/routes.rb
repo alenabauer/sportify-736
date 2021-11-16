@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   get 'offers/:id/edit', to: 'offers#edit', as: :edit_offer
   patch '/offers/:id', to: 'offers#update'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  get '/offers', to: 'pages#index', as: :offers
+  get '/offers', to: 'offers#index', as: :offers
 end
