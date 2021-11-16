@@ -7,6 +7,13 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-lewagon .navbar-brand {
+  color: #F8684E;
+  display: flex;
+  align-items: baseline;
+  font-size: 16px;
+  i {
+    font-size: 24px;
+    margin-right: 8px;
+  }
 }
