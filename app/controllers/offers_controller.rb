@@ -37,6 +37,15 @@ class OffersController < ApplicationController
 
   def index
     @offers = Offer.all
+
+    @markers = @offers.map do |offer|
+      next unless offer.user.geocoded?
+
+      {
+        lat: offer.user.latitude,
+        lng: offer.user.longitude
+      }
+    end
   end
 
   private
