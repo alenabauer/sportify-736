@@ -1,21 +1,21 @@
 
 
 <div class="container show-offer">
-  <%= link_to 'Back', offers_path, class: "back-button" %>
-  <h1> <%= @offer.name %> </h1>
+  <div class="show-offer-top">
+    <%= link_to 'Back to Offers', offers_path, class: "back-button" %>
+    <p class="show-offer-price"> <%= @offer.price.round %>€ / day</p>
+  </div>
     <div class="show-images">
       <% if @offer.photos.attached? %>
           <% @offer.photos.each do |photo| %>
-            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class:"border" %>
-            <% end %>
+            <%= cl_image_tag photo.key %>
+          <% end %>
         <% else  %>
           <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt ="pic" class="border">
         <% end %>
     </div>
-  <h2 class ="card-text"> <%= @offer.equipment_type %> </h2>
-  <p class ="card-text"> <%= @offer.description %> </p>
-  <h3 class ="card-text"> <%= @offer.price %>€ </h3>
-  <p class ="card-text"> Provided by :<%= @offer.user.first_name %> <%= @offer.user.last_name %> </p>
-
-
+  <h2> <%= @offer.name %> </h2>
+  <p class="show-equipment-type"> <%= @offer.equipment_type %> </p>
+  <p class="show-offer-description"> <%= @offer.description.length > 0 ? @offer.description : "No description." %> </p>
+  <p class="show-offer-owner"> Rented out by: <%= @offer.user.first_name.capitalize %> <%= @offer.user.last_name.first.capitalize %>. </p>
 </div>
