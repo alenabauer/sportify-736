@@ -8,6 +8,6 @@
     <%= f.input :equipment_type %>
     <%= f.input :equipment_category, collection: ['climbing', 'cycling', 'snow sports', 'water sports', 'ball games'] %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "form-submit-btn" %>
   </div>
 <% end %>
