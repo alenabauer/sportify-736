@@ -7,6 +7,7 @@
 .my-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   gap: 24px;
   div {
     box-shadow: 2px 2px 16px hsla(0, 0%, 0%, .5);
@@ -17,4 +18,9 @@
   height: 100vh;
   border-radius: 16px;
   box-shadow: 2px 2px 16px hsla(0, 0%, 0%, .5);
+}
+
+.offers-heading {
+  color: $aero-blue;
+  margin-bottom: 36px;
 }
