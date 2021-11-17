@@ -6,19 +6,19 @@
   display: flex;
   align-items: center;
   border-radius: 16px;
-  margin-bottom: 16px;
-  padding: 16px;
   border: 4px $aero-blue solid;
   transition: .3s;
+  padding: 16px;
+  gap: 8px;
   &:hover {
     border: 4px $gold solid;
   }
 }
 
 .card-product img {
+  width: 50%;
   height: 100%;
-  width: 200px;
-  object-fit: cover;
+  border-radius: 16px !important;
 }
 
 .card-product h2 {
@@ -37,6 +37,8 @@
 }
 
 .card-product .card-product-infos {
+  width: 50%;
+  height: 100%;
   padding: 16px;
   border-radius: 16px;
   box-shadow: none;
