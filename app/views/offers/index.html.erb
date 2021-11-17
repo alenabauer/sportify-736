@@ -1,15 +1,16 @@
 
 <div class="container">
-  <h1>Sportify offers ⛷🎾🚴🏻‍♀️⛸🏄🏼‍♀️</h1>
-  <div>
-    <% @offers.each do |offer| %>
-      <%= render 'card', offer: offer %>
-    <% end %>
+  <h2 class="form-heading">Sportify offers ⛷🎾🚴🏻‍♀️⛸🏄🏼‍♀️</h2>
+  <div class="my-index">
+    <div class="my-cards">
+      <% @offers.each do |offer| %>
+        <%= render 'card', offer: offer %>
+      <% end %>
+    </div>
+    <div class= "my-map"
+        data-controller="mapbox"
+        data-mapbox-markers-value="<%= @markers.to_json %>"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
 </div>
-
-  <div style="width: 100%; height: 600px;"
-      data-controller="mapbox"
-      data-mapbox-markers-value="<%= @markers.to_json %>"
-      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>

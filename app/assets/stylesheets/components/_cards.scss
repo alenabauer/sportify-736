@@ -7,6 +7,12 @@
   align-items: center;
   border-radius: 16px;
   margin-bottom: 16px;
+  padding: 16px;
+  border: 4px $aero-blue solid;
+  transition: .3s;
+  &:hover {
+    border: 4px $gold solid;
+  }
 }
 
 .card-product img {
@@ -19,6 +25,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  font-style: italic;
 }
 
 .card-product p {
@@ -31,4 +38,13 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+  border-radius: 16px;
+  box-shadow: none;
+  background: $aero-blue;
+  color: $indigo-blue;
+}
+
+.card-price {
+  font-size: 16px !important;
+  font-weight: 700;
 }
