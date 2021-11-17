@@ -1,22 +1,15 @@
-  <h1>Your offers</h1>
-<div>
-  <% @offers.each do |offer| %>
-    <h2><%= offer.name %></h2>
-    <p><strong>Type: </strong><%= offer.equipment_type %></p>
-    <p><strong>Description: </strong><%= offer.description %></p>
-    <h4>$<%= offer.price %>/day</h4>
-    <p><strong>Category: </strong><%= offer.equipment_category %></p>
-    <% if offer.photos.attached? %>
-      <% offer.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-      <% end %>
-    <% else  %>
-      <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1172&q=80" alt ="pic">
+
+<div class="container">
+  <h1>Sportify offers ⛷🎾🚴🏻‍♀️⛸🏄🏼‍♀️</h1>
+  <div>
+    <% @offers.each do |offer| %>
+      <%= render 'card', offer: offer %>
     <% end %>
-  <% end %>
+  </div>
+</div>
+
   <div style="width: 100%; height: 600px;"
       data-controller="mapbox"
       data-mapbox-markers-value="<%= @markers.to_json %>"
       data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-</div>
