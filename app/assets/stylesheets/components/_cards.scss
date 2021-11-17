@@ -1,16 +1,17 @@
 .card-product {
   height: 200px;
-  background: white;
+  background: linear-gradient(135deg, hsla(162, 56%, 82%, 1) 0%, hsla(193, 31%, 43%, 1) 24%, hsla(203, 100%, 18%, 1) 73%);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   border-radius: 16px;
-  border: 4px $aero-blue solid;
-  transition: .3s;
+  transition: .5s;
   padding: 16px;
   gap: 8px;
+  color: white;
   &:hover {
-    border: 4px $gold solid;
+    background: linear-gradient(135deg, hsla(34, 87%, 76%, 1) 0%, hsla(9, 92%, 64%, 1) 45%, hsla(9, 45%, 30%, 1) 92%);
+    transform: scale(1.05)
   }
 }
 
@@ -18,34 +19,38 @@
   width: 50%;
   height: 100%;
   border-radius: 16px !important;
+  box-shadow: 2px 2px 8px hsla(0, 0%, 100%, .5);
 }
 
 .card-product h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
-  font-style: italic;
 }
 
 .card-product p {
   font-size: 12px;
   line-height: 1.4;
-  opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  color: $aero-blue;
 }
 
 .card-product .card-product-infos {
   width: 50%;
   height: 100%;
-  padding: 16px;
+  padding: 0 16px;
   border-radius: 16px;
   box-shadow: none;
-  background: $aero-blue;
-  color: $indigo-blue;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  div {
+    box-shadow: none;
+  }
 }
 
 .card-price {
-  font-size: 16px !important;
-  font-weight: 700;
+  font-size: 20px !important;
 }
