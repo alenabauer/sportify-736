@@ -12,7 +12,7 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/alenabauer/ckw43utrj0xhv15p61di32g5s'
     });
     this._addMarkersToMap();
     this._fitMapToMarkers();
@@ -20,8 +20,19 @@ export default class extends Controller {
 
   _addMarkersToMap() {
     this.markersValue.forEach((marker) => {
-      new mapboxgl.Marker()
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+
+      // Create a HTML element for your custom marker
+      const customMarker = document.createElement('div');
+      customMarker.className = 'marker';
+      customMarker.innerHTML = '<i class="fas fa-baseball-ball"></i>';
+      customMarker.style.color = '#F8684E';
+      customMarker.style.fontSize = '24px';
+      customMarker.style.display = 'block';
+
+      new mapboxgl.Marker(customMarker)
         .setLngLat([marker.lng, marker.lat])
+        .setPopup(popup)
         .addTo(this.map);
     });
   }
