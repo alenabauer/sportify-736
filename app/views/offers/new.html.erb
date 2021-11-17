@@ -1,4 +1,7 @@
-<h2 class="form-heading">New Sportify Offer </h2>
 
-<%= render 'form', offer: @offer %>
-<%= link_to 'Back to all offers', offers_path, class: "form-link" %>
+<div class="create-form">
+  <%= link_to 'Back', offers_path, class: "back-button" %>
+  <h2 class="form-heading">New Sportify Offer </h2>
+
+  <%= render 'form', offer: @offer %>
+</div>

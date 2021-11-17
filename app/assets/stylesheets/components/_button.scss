@@ -1,0 +1,14 @@
+.back-button {
+  margin-left: 24px;
+  background: $aero-blue;
+  border-radius: 16px;
+  color: $indigo-blue;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 8px 24px;
+  transition: .3s;
+  &:hover {
+    background: $gold;
+    color: $indigo-blue;
+  }
+}

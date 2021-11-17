@@ -1,0 +1,50 @@
+.card-product {
+  overflow: hidden;
+  height: 200px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  padding: 16px;
+  border: 4px $aero-blue solid;
+  transition: .3s;
+  &:hover {
+    border: 4px $gold solid;
+  }
+}
+
+.card-product img {
+  height: 100%;
+  width: 200px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  font-style: italic;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: none;
+  background: $aero-blue;
+  color: $indigo-blue;
+}
+
+.card-price {
+  font-size: 16px !important;
+  font-weight: 700;
+}

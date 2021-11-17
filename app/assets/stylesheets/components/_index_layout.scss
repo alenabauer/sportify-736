@@ -1,0 +1,20 @@
+.my-index {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+.my-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  div {
+    box-shadow: 2px 2px 16px hsla(0, 0%, 0%, .5);
+  }
+}
+.my-map {
+  width: 100%;
+  height: 100vh;
+  border-radius: 16px;
+  box-shadow: 2px 2px 16px hsla(0, 0%, 0%, .5);
+}

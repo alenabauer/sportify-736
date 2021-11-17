@@ -24,3 +24,21 @@
     width: 100%;
   }
 }
+
+#see-offers-btn {
+  width: 20%;
+  background: $aero-blue;
+  display: block;
+  text-decoration: none;
+  color: $indigo-blue;
+  text-align: center;
+  padding: 16px;
+  font-size: 20px;
+  border-radius: 16px;
+  box-shadow: 2px 2px 16px hsla(0, 0%, 0%, .5);
+  transition: .3s;
+  &:hover {
+    background: $tomato;
+    color: white;
+  }
+}

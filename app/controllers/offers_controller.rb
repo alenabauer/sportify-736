@@ -37,6 +37,16 @@ class OffersController < ApplicationController
 
   def index
     @offers = Offer.all
+
+    @markers = []
+    @offers.each do |offer|
+      if offer.user.geocoded?
+        @markers << {
+          lat: offer.user.latitude,
+          lng: offer.user.longitude
+        }
+      end
+    end
   end
 
   private

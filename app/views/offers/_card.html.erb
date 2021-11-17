@@ -1,0 +1,14 @@
+
+<div class="card-product">
+  <% if offer.photos.attached? %>
+    <%= cl_image_tag offer.photos[0].key, height: 300, width: 400, crop: :fill %>
+  <% else  %>
+    <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1172&q=80" alt ="pic">
+  <% end %>
+  <div class="card-product-infos">
+    <h2><%= offer.name %></h2>
+    <p><strong>Type: </strong><%= offer.equipment_type %></p>
+    <p><strong>Category: </strong><%= offer.equipment_category %></p>
+    <p class="card-price"><%= offer.price %>€/day</p>
+  </div>
+</div>
