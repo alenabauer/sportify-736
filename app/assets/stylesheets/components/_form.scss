@@ -1,0 +1,43 @@
+form {
+  width: 40%;
+  margin: 0 auto;
+  color: white;
+}
+.form-heading {
+  text-align: center;
+  color: $aero-blue;
+}
+.form-submit-btn {
+  width: 100%;
+  background: $aero-blue;
+  border-radius: 16px;
+  transition: .3s;
+  font-weight: 700;
+  color: $indigo-blue;
+  &:hover {
+    background: $tomato;
+    color: white;
+  }
+}
+.form-link {
+  color: $aero-blue;
+  opacity: .8;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-weight: 300;
+  &:hover {
+    color: white;
+  }
+}
+.form-links {
+  color: $aero-blue;
+  text-align: center;
+  a {
+    color: $aero-blue;
+    transition: .3s;
+    &:hover {
+      color: white;
+    }
+  }
+}
