@@ -1,0 +1,14 @@
+.back-button {
+  margin: 30px 10px;
+  background: $aero-blue;
+  border-radius: 16px;
+  color: $indigo-blue;
+  box-shadow: 2px 2px 16px hsla(0, 0%, 0%, .5);
+  font-weight: 700;
+  text-decoration: none;
+  padding: 8px 24px;
+  &:hover {
+    background: $tomato;
+    color: white;
+  }
+}
