@@ -1,9 +1,10 @@
 
 .show-offer {
+  padding-top: 24px;
   margin: 20;
   text-align: justify;
-   box-shadow: 0 0 16px rgba(0,0,0,0.2);
-   background-color: #F7C98E;
+  box-shadow: 0 0 16px rgba(0,0,0,0.2);
+  background-color: #F7C98E;
   border-radius: 16px;
 }
 
@@ -13,39 +14,45 @@
   font-weight: bold;
   color: #00395D;
   text-align: left;
-  margin-left: 64px;
+  margin-left: 48px;
   font: $headers-font;
   padding: 16px;
 }
 
 .show-offer h2 {
   font-size: 32px;
-  font-weight: normal;
+  font-weight: bold;
   color: #00395D;
   text-align: left;
   margin-left: 64px;
+  margin-right: 64px;
   font: $headers-font;
-  padding: 16px;
+  padding-top: 16px;
+  border-bottom: #F8684E 1px solid;
 }
 
 .show-offer h3 {
-  font-size: 16px;
-  font-weight: normal;
+  font-size: 32px;
+  font-weight: bold;
   color: #00395D;
   text-align: right;
+  margin-right: 64px;
+  margin-left: 64px;
   font: $headers-font;
-  padding: 16px;
+  padding: 32px;
+  border-bottom: #F8684E 1px solid;
 }
 
 .show-offer p {
-  font-size: 16px;
+  font-size: 32px;
   font-weight: normal;
   color: #00395D;
   text-align: left;
   opacity: .8;
   margin-left: 64px;
+  margin-right: 64px;
   font: $body-font;
-  // padding: 8px;
+  padding-bottom: 8px;
 }
 
 .show-images {
@@ -58,5 +65,6 @@
 }
 
 .border {
-  border-radius: 16px;
+  // border-radius: 16px;
+  box-shadow: 2px 2px 16px hsla(0, 0%, 0%, .5);
 }

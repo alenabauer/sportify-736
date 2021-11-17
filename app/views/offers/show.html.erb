@@ -1,6 +1,7 @@
-<%= link_to 'Back', offers_path, class: "back-button" %>
+
 
 <div class="container show-offer">
+  <%= link_to 'Back', offers_path, class: "back-button" %>
   <h1> <%= @offer.name %> </h1>
     <div class="show-images">
       <% if @offer.photos.attached? %>
