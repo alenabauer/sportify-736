@@ -2,10 +2,13 @@
   <div class="container">
     <% if user_signed_in? %>
       <h1>Welcome to Sportify-736, <strong><%= current_user.first_name.capitalize %></strong>!</h1>
+      <br>
     <% else %>
+      <br>
       <h1>Sportify-736 makes <strong>sports</strong> easier!</h1>
     <% end %>
     <p>Rent sports equipment from the sports lovers near you.</p>
+    <br>
     <%= link_to "See all offers!", offers_path, id: "see-offers-btn" %>
   </div>
 </div>
