@@ -1,11 +1,13 @@
 
 <div class="container">
-  <h2 class="form-heading">Sportify offers ⛷🎾🚴🏻‍♀️⛸🏄🏼‍♀️</h2>
   <div class="my-index">
-    <div class="my-cards">
-      <% @offers.each do |offer| %>
-        <%= render 'card', offer: offer %>
-      <% end %>
+    <div>
+      <h2 class="form-heading offers-heading">Sportify offers ⛷🎾🚴🏻‍♀️⛸🏄🏼‍♀️</h2>
+      <div class="my-cards">
+        <% @offers.each do |offer| %>
+          <%= render 'card', offer: offer %>
+        <% end %>
+      </div>
     </div>
     <div class= "my-map"
         data-controller="mapbox"
