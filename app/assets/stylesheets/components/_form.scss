@@ -1,6 +1,6 @@
 .create-form {
   width: 60%;
-  background-color: $tomato;
+  background-color: $gold;
   margin: 40px auto;
   padding: 30px 0;
   border-radius: 16px;
@@ -8,14 +8,15 @@
 }
 
 form {
-  color: white;
+  color: $indigo-blue;
   margin: 0 auto;
   width: 70%;
 }
 .form-heading {
   text-align: center;
-  color: white;
+  color: $indigo-blue;
   margin-top: 20px;
+  font-weight: 700;
 }
 .form-submit-btn {
   width: 100%;
@@ -25,8 +26,8 @@ form {
   font-weight: 700;
   color: $indigo-blue;
   &:hover {
-    background: $gold;
-    color: $indigo-blue;
+    background: $tomato;
+    color: white;
   }
 }
 .form-link {
