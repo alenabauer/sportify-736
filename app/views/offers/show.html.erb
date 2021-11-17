@@ -1,10 +1,19 @@
 
-<div class="card">
-<h2> <%= @offer.name %> </h2>
+<div class="container show-offer">
+  <h1> <%= @offer.name %> </h1>
+    <div class="show-images">
+      <% if @offer.photos.attached? %>
+          <% @offer.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class:"border" %>
+            <% end %>
+        <% else  %>
+          <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt ="pic" class="border">
+        <% end %>
+    </div>
+  <h2 class ="card-text"> <%= @offer.equipment_type %> </h2>
+  <p class ="card-text"> <%= @offer.description %> </p>
+  <h3 class ="card-text"> <%= @offer.price %>€ </h3>
+  <p class ="card-text"> Provided by :<%= @offer.user.first_name %> <%= @offer.user.last_name %> </p>
 
-<p class ="card-text"> <%= @offer.description %> </p>
-<p class ="card-text"> <%= @offer.equipment_type %> </p>
-<p class ="card-text"> <%= @offer.price %> </p>
-<p class ="card-text"> <%= @offer.user %> </p>
 
 </div>
