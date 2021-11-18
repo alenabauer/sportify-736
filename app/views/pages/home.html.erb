@@ -35,14 +35,26 @@
   </div>
 </div>
 
+<% if user_signed_in? %>
+  <h2 class="inspiration-heading">Need inspiration? Discover the sports equipments near <%= current_user.address.capitalize %> 👇</h2>
+<% else %>
+  <h2 class="inspiration-heading">Need Inspiration? Browse what other users have to offer 👇 </h2>
+<% end %>
+
 <div class="homepage-cards container">
   <div class="homepage-card">
-    <%= image_tag "cycling.svg", alt: "cycling img" %>
+    <%= link_to "/offers?query=cycling&location=#{current_user.address if user_signed_in?}&button=" do %>
+      <%= image_tag "cycling.svg", alt: "cycling img" %>
+    <% end %>
   </div>
   <div class="homepage-card">
-    <%= image_tag "ball.svg", alt: "ball img" %>
+    <%= link_to "/offers?query=ball&location=#{current_user.address if user_signed_in?}&button=" do %>
+      <%= image_tag "ball.svg", alt: "ball img" %>
+    <% end %>
   </div>
   <div class="homepage-card">
-    <%= image_tag "snow.svg", alt: "snow img" %>
+    <%= link_to "/offers?query=snow&location=#{current_user.address if user_signed_in?}&button=" do %>
+      <%= image_tag "snow.svg", alt: "snow img" %>
+    <% end %>
   </div>
 </div>
