@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: url(https://images.unsplash.com/photo-1551524559-8af4e6624178?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1026&q=80);">
+<div class="banner">
   <div class="container">
     <% if user_signed_in? %>
       <h1>Welcome to Sportify-736, <strong><%= current_user.first_name.capitalize %></strong>!</h1>
@@ -36,7 +36,7 @@
 </div>
 
 <% if user_signed_in? %>
-  <h2 class="inspiration-heading">Need inspiration? Discover the sports equipments near <%= current_user.address.capitalize %> 👇</h2>
+  <h2 class="inspiration-heading">Need inspiration? Discover sports equipment rentals near <%= current_user.address.capitalize %> 👇</h2>
 <% else %>
   <h2 class="inspiration-heading">Need Inspiration? Browse what other users have to offer 👇 </h2>
 <% end %>
@@ -46,15 +46,18 @@
     <%= link_to "/offers?query=cycling&location=#{current_user.address if user_signed_in?}&button=" do %>
       <%= image_tag "cycling.svg", alt: "cycling img" %>
     <% end %>
+    <p>Cycling</p>
   </div>
   <div class="homepage-card">
     <%= link_to "/offers?query=ball&location=#{current_user.address if user_signed_in?}&button=" do %>
       <%= image_tag "ball.svg", alt: "ball img" %>
     <% end %>
+    <p>Ball Games</p>
   </div>
   <div class="homepage-card">
     <%= link_to "/offers?query=snow&location=#{current_user.address if user_signed_in?}&button=" do %>
       <%= image_tag "snow.svg", alt: "snow img" %>
     <% end %>
+    <p>Winter Sports</p>
   </div>
 </div>
