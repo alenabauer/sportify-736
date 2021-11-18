@@ -61,6 +61,19 @@ class OffersController < ApplicationController
         @offers = Offer.all
       end
     end
+    if params[:query].present?
+      # sql_query =
+      #   " \
+      #   offers.name @@ :query \
+      #   OR offers.equipment_type @@ :query \
+      #   OR offers.equipment_category @@ :query \
+      #   OR offers.description @@ :query \
+      # "
+
+      @offers = Offer.search_full_text(params[:query])
+    else
+      @offers = Offer.all
+    end
   end
 
   private
