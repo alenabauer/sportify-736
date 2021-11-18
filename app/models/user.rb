@@ -3,7 +3,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :offers
   has_many :reservations
-  has_many :reservations_as_owner, through: :offers, source: :reservations
 
   validates :first_name, presence: true
   validates :last_name, presence: true
