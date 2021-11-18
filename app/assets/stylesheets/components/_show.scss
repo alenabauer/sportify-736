@@ -1,70 +1,59 @@
-
 .show-offer {
-  padding-top: 24px;
-  margin: 20;
-  text-align: justify;
-  box-shadow: 0 0 16px rgba(0,0,0,0.2);
-  background-color: #F7C98E;
-  border-radius: 16px;
-}
-
-
-.show-offer h1 {
-  font-size: 64px;
-  font-weight: bold;
-  color: #00395D;
-  text-align: left;
-  margin-left: 48px;
-  font: $headers-font;
-  padding: 16px;
-}
-
-.show-offer h2 {
-  font-size: 32px;
-  font-weight: bold;
-  color: #00395D;
-  text-align: left;
-  margin-left: 64px;
-  margin-right: 64px;
-  font: $headers-font;
-  padding-top: 16px;
-  border-bottom: #F8684E 1px solid;
-}
-
-.show-offer h3 {
-  font-size: 32px;
-  font-weight: bold;
-  color: #00395D;
-  text-align: right;
-  margin-right: 64px;
-  margin-left: 64px;
-  font: $headers-font;
-  padding: 32px;
-  border-bottom: #F8684E 1px solid;
-}
-
-.show-offer p {
-  font-size: 32px;
-  font-weight: normal;
-  color: #00395D;
-  text-align: left;
-  opacity: .8;
-  margin-left: 64px;
-  margin-right: 64px;
-  font: $body-font;
-  padding-bottom: 8px;
+  margin-top: 8px;
+  color: white;
+  .show-offer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    a {
+      margin: 0;
+    }
+    .show-offer-price {
+      font-size: 32px;
+      display: block;
+      color: $aero-blue;
+    }
+  }
+  .show-equipment-type {
+    font-style: italic;
+    color: $aero-blue;
+  }
+  .show-offer-owner {
+    opacity: .6;
+  }
 }
 
 .show-images {
-  width: 64%;
+  margin: 32px 0;
+  height: 320px;
+  border-radius: 16px;
   display: flex;
-  justify-content: space-between;
-  margin-left: 64px;
-  // margin-right: auto;
-  height: 300px;
-}
-
-.border {
-  // border-radius: 16px;
-  box-shadow: 2px 2px 16px hsla(0, 0%, 0%, .5);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 48px;
+  &::after {
+    content: "";
+    background: url(https://thumbs.dreamstime.com/b/sports-gear-white-4114757.jpg);
+    background-size: cover;
+    background-position-y: center;
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    border-radius: 16px;
+  }
+    img {
+      height: 80%;
+      border-radius: 16px;
+      box-shadow: 2px 2px 16px rgba(0, 0, 0, .5);
+      transition: .5s;
+      &:hover {
+        transform: scale(2);
+        cursor: zoom-in;
+      }
+    }
 }

@@ -20,8 +20,19 @@ export default class extends Controller {
 
   _addMarkersToMap() {
     this.markersValue.forEach((marker) => {
-      new mapboxgl.Marker()
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+
+      // Create a HTML element for your custom marker
+      const customMarker = document.createElement('div');
+      customMarker.className = 'marker';
+      customMarker.innerHTML = '<i class="fas fa-skiing-nordic"></i>';
+      customMarker.style.color = '#F8684E';
+      customMarker.style.fontSize = '24px';
+      customMarker.style.display = 'block';
+
+      new mapboxgl.Marker(customMarker)
         .setLngLat([marker.lng, marker.lat])
+        .setPopup(popup)
         .addTo(this.map);
     });
   }

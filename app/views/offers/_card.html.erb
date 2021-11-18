@@ -6,10 +6,11 @@
       <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1172&q=80" alt ="pic">
     <% end %>
     <div class="card-product-infos">
-      <h2><%= offer.name %></h2>
-      <p><strong>Type: </strong><%= offer.equipment_type %></p>
-      <p><strong>Category: </strong><%= offer.equipment_category %></p>
-      <p class="card-price"><%= offer.price %>€/day</p>
+      <div>
+        <h2><%= offer.name.upcase %></h2>
+        <p>Rented by <%= offer.user.first_name.capitalize %>, <%= offer.user.address %></p>
+      </div>
+      <p class="card-price"><%= offer.price.to_i %>€ / day</p>
     </div>
   </div>
 <% end %>
