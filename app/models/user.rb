@@ -13,4 +13,8 @@ class User < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+
+  def reservation_for(offer)
+    Reservation.find_by(user: self, offer: offer)
+  end
 end
