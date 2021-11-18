@@ -33,10 +33,15 @@ class OffersController < ApplicationController
 
   def show
     @offer = Offer.find(params[:id])
+    @reservation = Reservation.new
   end
 
   def index
-    @offers = Offer.all
+    if params[:query].present? || params[:location].present?
+      @offers = Offer.search_full_text("#{params[:query]} #{params[:location]}")
+    else
+      @offers = Offer.all
+    end
 
     @markers = []
     @offers.each do |offer|
@@ -61,18 +66,17 @@ class OffersController < ApplicationController
         @offers = Offer.all
       end
     end
-    if params[:query].present?
-      # sql_query =
-      #   " \
-      #   offers.name @@ :query \
-      #   OR offers.equipment_type @@ :query \
-      #   OR offers.equipment_category @@ :query \
-      #   OR offers.description @@ :query \
-      # "
+  end
 
-      @offers = Offer.search_full_text(params[:query])
+  def reservations
+    @offer = Offer.find(params[:id])
+    @reservation = Reservation.new(reservation_params)
+    @reservation.offer = @offer
+    @reservation.user = current_user
+    if @reservation.save
+      redirect_to offer_path(@offer)
     else
-      @offers = Offer.all
+      render :show
     end
   end
 
@@ -80,5 +84,9 @@ class OffersController < ApplicationController
 
   def offer_params
     params.require(:offer).permit(:name, :description, :equipment_type, :equipment_category, :price, photos: [])
+  end
+
+  def reservation_params
+    params.require(:reservation).permit(:start_date, :end_date)
   end
 end

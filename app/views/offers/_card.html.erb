@@ -8,7 +8,7 @@
     <div class="card-product-infos">
       <div>
         <h2><%= offer.name.upcase %></h2>
-        <p>Rented by <%= offer.user.first_name.capitalize %>, <%= offer.user.address %></p>
+        <p>Rented by <%= offer.user.first_name.capitalize %>, <%= offer.user.address.capitalize %></p>
       </div>
       <p class="card-price"><%= offer.price.to_i %>€ / day</p>
     </div>
