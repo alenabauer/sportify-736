@@ -43,7 +43,8 @@ class OffersController < ApplicationController
       if offer.user.geocoded?
         @markers << {
           lat: offer.user.latitude,
-          lng: offer.user.longitude
+          lng: offer.user.longitude,
+          info_window: render_to_string(partial: "info_window", locals: { offer: offer }),
         }
       end
       if params[:query].present?

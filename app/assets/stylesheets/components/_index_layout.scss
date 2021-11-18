@@ -1,26 +1,29 @@
 .my-index {
   margin-top: 36px;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  display: flex;
   gap: 24px;
+  height: 2000px;
 }
 .my-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: min-content;
   gap: 24px;
   div {
     box-shadow: 2px 2px 16px hsla(0, 0%, 0%, .5);
   }
 }
 .my-map {
-  width: 100%;
+  width: 50%;
   height: 100vh;
   border-radius: 16px;
   box-shadow: 2px 2px 16px hsla(0, 0%, 0%, .5);
+  position: sticky;
+  top: 88px;
+  align-self: flex-start;
 }
 
 .offers-heading {
-  color: $aero-blue;
+  color: white;
   margin-bottom: 36px;
 }

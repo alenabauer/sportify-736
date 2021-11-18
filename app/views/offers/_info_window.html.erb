@@ -1,0 +1,6 @@
+<%= link_to offer_path(offer) do %>
+  <div class="info-window">
+    <p><%= offer.equipment_type %></p>
+    <p><%= offer.price.to_i %>€</p>
+  </div>
+<% end %>
