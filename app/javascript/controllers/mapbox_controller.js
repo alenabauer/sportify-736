@@ -25,9 +25,10 @@ export default class extends Controller {
       // Create a HTML element for your custom marker
       const customMarker = document.createElement('div');
       customMarker.className = 'marker';
-      customMarker.innerHTML = '<i class="fas fa-skiing-nordic"></i>';
-      customMarker.style.color = '#F8684E';
-      customMarker.style.fontSize = '24px';
+      customMarker.innerHTML = '<i class="fas fa-map-marker-alt"></i>';
+      customMarker.style.color = '#f8684e';
+      customMarker.style.textShadow = '2px 2px 4px #00395d';
+      customMarker.style.fontSize = '30px';
       customMarker.style.display = 'block';
 
       new mapboxgl.Marker(customMarker)
