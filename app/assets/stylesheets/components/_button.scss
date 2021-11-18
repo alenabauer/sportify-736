@@ -1,12 +1,11 @@
 .back-button {
-  margin: 32px 0;
   background: $aero-blue;
+  text-decoration: none;
   border-radius: 16px;
   color: $indigo-blue;
+  box-shadow: 2px 2px 16px hsla(0, 0%, 0%, .5);
   font-weight: 700;
-  text-decoration: none;
   padding: 8px 24px;
-  transition: .3s;
   &:hover {
     background: $tomato;
     color: white;

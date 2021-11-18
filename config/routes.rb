@@ -6,4 +6,5 @@ Rails.application.routes.draw do
       post :reservations
     end
   end
+  get '/dashboard', to: 'dashboard#show'
 end
