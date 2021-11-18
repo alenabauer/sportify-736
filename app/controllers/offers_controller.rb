@@ -37,7 +37,11 @@ class OffersController < ApplicationController
   end
 
   def index
-    @offers = Offer.all
+    if params[:query].present? || params[:location].present?
+      @offers = Offer.search_full_text("#{params[:query]} #{params[:location]}")
+    else
+      @offers = Offer.all
+    end
 
     @markers = []
     @offers.each do |offer|

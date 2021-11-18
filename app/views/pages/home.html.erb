@@ -12,6 +12,21 @@
     <%= link_to "See all offers!", offers_path, id: "see-offers-btn" %>
   </div>
 </div>
+<div>
+  <%= form_tag offers_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find your favorite sports equipment!"
+  %>
+  <%= text_field_tag :location,
+    params[:location],
+    class: "form-control",
+    placeholder: "Enter your location"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+</div>
 <div class="homepage-cards container">
   <div class="homepage-card">
     <%= image_tag "cycling.svg", alt: "cycling img" %>

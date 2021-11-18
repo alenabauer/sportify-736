@@ -8,4 +8,14 @@ class Offer < ApplicationRecord
   validates :price, presence: true
   validates :equipment_type, presence: true
   validates :equipment_category, presence: true, inclusion: { in: CATEGORIES }
+
+  include PgSearch::Model
+  pg_search_scope :search_full_text,
+  against: [:equipment_type, :equipment_category, :name, :description],
+    associated_against: {
+      user: [ :address ]
+    },
+  using: {
+    tsearch: { prefix: true }
+    }
 end
