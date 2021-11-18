@@ -14,8 +14,24 @@
           <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt ="pic" class="border">
         <% end %>
     </div>
-  <h2> <%= @offer.name %> </h2>
-  <p class="show-equipment-type"> <%= @offer.equipment_type %> </p>
-  <p class="show-offer-description"> <%= @offer.description.length > 0 ? @offer.description : "No description." %> </p>
-  <p class="show-offer-owner"> Rented out by: <%= @offer.user.first_name.capitalize %> <%= @offer.user.last_name.first.capitalize %>. </p>
+  <h2 class="text-center"> <%= @offer.name %> </h2>
+  <div class="show-page-flex">
+    <div class="show-page-description">
+      <div>
+        <p class="show-equipment-type"> <%= @offer.equipment_type %> </p>
+        <p class="show-offer-description"> <%= @offer.description.length > 0 ? @offer.description : "No description." %> </p>
+      </div>
+      <p class="show-offer-owner"> Rented out by: <%= @offer.user.first_name.capitalize %> <%= @offer.user.last_name.first.capitalize %>. </p>
+    </div>
+    <div id="reservation-form">
+      <h3 class="form-heading">Rent <%= @offer.user.first_name.capitalize %>'s <%= @offer.equipment_type.downcase %> now! </h3>
+      <%= simple_form_for [@offer, @reservation], url: reservations_offer_path(@offer) do |f| %>
+        <div class="form-dates">
+          <%= f.input :start_date, as: :date, html5: true, label: "From:" %>
+          <%= f.input :end_date, as: :date, html5: true, label: "To:" %>
+        </div>
+        <%= f.submit "Make a Reservation", class: "form-submit-btn" %>
+      <% end %>
+    </div>
+  </div>
 </div>

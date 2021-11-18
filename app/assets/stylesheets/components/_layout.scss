@@ -7,3 +7,13 @@
 .content-container {
   margin-top: 88px;
 }
+
+.show-page-flex {
+  display: flex;
+  justify-content: space-between;
+  .show-page-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  resources :offers
+  resources :offers do
+    member do
+      post :reservations
+    end
+  end
 end
