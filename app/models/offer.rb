@@ -3,6 +3,7 @@ CATEGORIES = ['Climbing', 'Cycling', 'Snow sports', 'Water sports', 'Ball games'
 class Offer < ApplicationRecord
   belongs_to :user
   has_many_attached :photos
+  has_many :reservations
 
   validates :name, presence: true
   validates :price, presence: true
