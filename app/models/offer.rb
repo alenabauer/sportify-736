@@ -12,6 +12,9 @@ class Offer < ApplicationRecord
   include PgSearch::Model
   pg_search_scope :search_full_text,
   against: [:equipment_type, :equipment_category, :name, :description],
+    associated_against: {
+      user: [ :address ]
+    },
   using: {
     tsearch: { prefix: true }
     }
