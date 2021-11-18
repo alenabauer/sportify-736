@@ -52,16 +52,8 @@ class OffersController < ApplicationController
           info_window: render_to_string(partial: "info_window", locals: { offer: offer }),
         }
       end
-      if params[:query].present?
-        sql_query =
-          " \
-          offers.name @@ :query \
-          OR offers.equipment_type @@ :query \
-          OR offers.equipment_category @@ :query \
-          OR offers.description @@ :query \
-        "
-
-        @offers = Offer.where(sql_query, query: "%#{params[:query]}%")
+      if params[:query].present? || params[:location].present?
+        @offers = Offer.search_full_text("#{params[:query]} #{params[:location]}")
       else
         @offers = Offer.all
       end
