@@ -26,6 +26,8 @@ gem 'jbuilder', '~> 2.7'
 #Cloudinary
 gem 'cloudinary', '~> 1.16.0'
 gem 'devise'
+#Search query gem
+gem 'pg_search', '~> 2.3.0'
 
 gem "geocoder"
 
