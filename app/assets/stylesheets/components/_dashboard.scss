@@ -1,4 +1,4 @@
-h1 {
+.dash-heading {
   text-align: center;
   font-family: $headers-font;
   font-weight: bold;
@@ -6,18 +6,15 @@ h1 {
   padding-bottom: 10px;
 }
 
-h2 {
+.dash-item-heading {
   font-family: $headers-font;
   font-weight: bold;
   color: $indigo-blue;
   padding-bottom: 10px;
 }
 
-h3, h4 {
+.res-heading {
   font-family: $body-font;
-}
-
-h4 {
   text-align: center;
 }
 

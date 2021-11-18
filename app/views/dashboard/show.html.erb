@@ -1,8 +1,8 @@
-<h1> <%= current_user.first_name%>'s Dashboard </h1>
+<h1 class="dash-heading"> <%= current_user.first_name%>'s Dashboard </h1>
 
 <div class="dash-container">
    <div class="dash-item">
-    <h2>My offers</h2>
+    <h2 class="dash-item-heading">My offers</h2>
     <div class="reservation-info">
       <% if @my_offers == [] %>
         <h3>No offers</h3>
@@ -20,15 +20,15 @@
     <%= link_to "Create an Offer", new_offer_path, class: "nav-link dash-button", id: "create-offer-btn"%>
   </div>
   <div class="dash-item">
-    <h2>My reservations</h2>
+    <h2 class="dash-item-heading">My reservations</h2>
     <% if @my_outgoing_reservations == [] %>
-      <h3>No reservations</h3>
+      <h4 class="res-heading">No reservations</h4>
     <% end %>
       <% @my_outgoing_reservations.each do |reservation| %>
             <div class="reservation-info">
               <div>
               <%= link_to offer_path(reservation.offer) do %>
-                <h4><%= reservation.offer.name.upcase %></h4>
+                <h4 class="res-heading"><%= reservation.offer.name.upcase %></h4>
               <% end %>
                 <p>Rented from: <%= reservation.offer.user.first_name.capitalize %></p>
                 <p>Location: <%= reservation.offer.user.address.capitalize %></p>
@@ -41,10 +41,10 @@
   </div>
 
   <div class="dash-item">
-    <h2>Reservations</h2>
+    <h2 class="dash-item-heading">Reservations</h2>
     <div class="reservation-info">
       <% if @my_incoming_reservations == [] %>
-        <h4>No reservations</h4>
+        <h4 class="res-heading">No reservations</h4>
       <% end %>
       <% @my_incoming_reservations.each do |reservation| %>
         <% @my_outgoing_reservations.each do |reservation| %>
