@@ -9,32 +9,52 @@
     <% end %>
     <p>Rent sports equipment from the sports lovers near you.</p>
     <br>
-    <%= link_to "See all offers!", offers_path, id: "see-offers-btn" %>
+    <div class="search-container">
+      <%= form_tag offers_path, method: :get do %>
+      <div class="one">
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find your favorite sports equipment!"
+        %>
+      </div>
+      <div class="two">
+        <%= text_field_tag :location,
+          params[:location],
+          class: "form-control",
+          placeholder: "Enter your location"
+        %>
+      </div>
+      <div>
+        <%= button_tag(type: "submit", class: "search-button") do %>
+        <i class="fas fa-search"></i>
+        <% end %>
+      </div>
+    <% end %>
+    </div>
   </div>
 </div>
-<div>
-  <%= form_tag offers_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find your favorite sports equipment!"
-  %>
-  <%= text_field_tag :location,
-    params[:location],
-    class: "form-control",
-    placeholder: "Enter your location"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+
+<% if user_signed_in? %>
+  <h2 class="inspiration-heading">Need inspiration? Discover the sports equipments near <%= current_user.address.capitalize %> 👇</h2>
+<% else %>
+  <h2 class="inspiration-heading">Need Inspiration? Browse what other users have to offer 👇 </h2>
 <% end %>
-</div>
+
 <div class="homepage-cards container">
   <div class="homepage-card">
-    <%= image_tag "cycling.svg", alt: "cycling img" %>
+    <%= link_to "/offers?query=cycling&location=#{current_user.address if user_signed_in?}&button=" do %>
+      <%= image_tag "cycling.svg", alt: "cycling img" %>
+    <% end %>
   </div>
   <div class="homepage-card">
-    <%= image_tag "ball.svg", alt: "ball img" %>
+    <%= link_to "/offers?query=ball&location=#{current_user.address if user_signed_in?}&button=" do %>
+      <%= image_tag "ball.svg", alt: "ball img" %>
+    <% end %>
   </div>
   <div class="homepage-card">
-    <%= image_tag "snow.svg", alt: "snow img" %>
+    <%= link_to "/offers?query=snow&location=#{current_user.address if user_signed_in?}&button=" do %>
+      <%= image_tag "snow.svg", alt: "snow img" %>
+    <% end %>
   </div>
 </div>

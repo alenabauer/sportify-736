@@ -33,7 +33,7 @@ class OffersController < ApplicationController
 
   def show
     @offer = Offer.find(params[:id])
-    @reservation = Reservation.new
+    @reservation = current_user.reservation_for(@offer) || Reservation.new
   end
 
   def index
