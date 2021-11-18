@@ -23,15 +23,22 @@
       </div>
       <p class="show-offer-owner"> Rented out by: <%= @offer.user.first_name.capitalize %> <%= @offer.user.last_name.first.capitalize %>. </p>
     </div>
-    <div id="reservation-form">
-      <h3 class="form-heading">Rent <%= @offer.user.first_name.capitalize %>'s <%= @offer.equipment_type.downcase %> now! </h3>
-      <%= simple_form_for [@offer, @reservation], url: reservations_offer_path(@offer) do |f| %>
-        <div class="form-dates">
-          <%= f.input :start_date, as: :date, html5: true, label: "From:" %>
-          <%= f.input :end_date, as: :date, html5: true, label: "To:" %>
-        </div>
-        <%= f.submit "Make a Reservation", class: "form-submit-btn" %>
-      <% end %>
-    </div>
+    <% if @reservation.id %>
+      <div class="show-confirmation">
+        <p class="message"> You've successfully rented <%= @offer.equipment_type.downcase %> from <%= @offer.user.first_name.capitalize %> for the following dates: </p>
+        <p><%= @reservation.start_date.to_date.to_formatted_s(:long_ordinal) %> - <%= @reservation.end_date.to_date.to_formatted_s(:long_ordinal) %></p>
+      </div>
+    <% else %>
+      <div id="reservation-form">
+        <h3 class="form-heading">Rent <%= @offer.user.first_name.capitalize %>'s <%= @offer.equipment_type.downcase %> now! </h3>
+        <%= simple_form_for [@offer, @reservation], url: reservations_offer_path(@offer) do |f| %>
+          <div class="form-dates">
+            <%= f.input :start_date, as: :date, html5: true, label: "From:" %>
+            <%= f.input :end_date, as: :date, html5: true, label: "To:" %>
+          </div>
+          <%= f.submit "Make a Reservation", class: "form-submit-btn" %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
