@@ -33,6 +33,7 @@ class OffersController < ApplicationController
 
   def show
     @offer = Offer.find(params[:id])
+    @reservation = Reservation.new
   end
 
   def index
@@ -54,9 +55,25 @@ class OffersController < ApplicationController
     end
   end
 
+  def reservations
+    @offer = Offer.find(params[:id])
+    @reservation = Reservation.new(reservation_params)
+    @reservation.offer = @offer
+    @reservation.user = current_user
+    if @reservation.save
+      redirect_to offer_path(@offer)
+    else
+      render :show
+    end
+  end
+
   private
 
   def offer_params
     params.require(:offer).permit(:name, :description, :equipment_type, :equipment_category, :price, photos: [])
+  end
+
+  def reservation_params
+    params.require(:reservation).permit(:start_date, :end_date)
   end
 end

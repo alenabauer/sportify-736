@@ -52,3 +52,20 @@ form {
     }
   }
 }
+
+#reservation-form {
+  background: $gold;
+  height: min-content;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 2px 2px 16px hsla(0, 0%, 0%, .5);
+  width: 360px;
+  .form-heading {
+    color: $indigo-blue;
+  }
+  .form-submit-btn {
+    border: none;
+    height: 48px;
+    margin-bottom: 16px;
+  }
+}
