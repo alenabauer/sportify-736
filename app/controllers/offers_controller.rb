@@ -36,7 +36,11 @@ class OffersController < ApplicationController
   end
 
   def index
-    @offers = Offer.all
+    if params[:query].present? || params[:location].present?
+      @offers = Offer.search_full_text("#{params[:query]} #{params[:location]}")
+    else
+      @offers = Offer.all
+    end
 
     @markers = []
     @offers.each do |offer|
@@ -47,19 +51,6 @@ class OffersController < ApplicationController
           info_window: render_to_string(partial: "info_window", locals: { offer: offer }),
         }
       end
-    end
-    if params[:query].present?
-      # sql_query =
-      #   " \
-      #   offers.name @@ :query \
-      #   OR offers.equipment_type @@ :query \
-      #   OR offers.equipment_category @@ :query \
-      #   OR offers.description @@ :query \
-      # "
-
-      @offers = Offer.search_full_text(params[:query])
-    else
-      @offers = Offer.all
     end
   end
 
