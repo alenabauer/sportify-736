@@ -12,7 +12,7 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: 'mapbox://styles/alenabauer/ckw43utrj0xhv15p61di32g5s'
+      style: 'mapbox://styles/mapbox/streets-v10'
     });
     this._addMarkersToMap();
     this._fitMapToMarkers();
@@ -25,7 +25,7 @@ export default class extends Controller {
       // Create a HTML element for your custom marker
       const customMarker = document.createElement('div');
       customMarker.className = 'marker';
-      customMarker.innerHTML = '<i class="fas fa-baseball-ball"></i>';
+      customMarker.innerHTML = '<i class="fas fa-skiing-nordic"></i>';
       customMarker.style.color = '#F8684E';
       customMarker.style.fontSize = '24px';
       customMarker.style.display = 'block';
