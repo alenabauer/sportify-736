@@ -1,8 +1,5 @@
 .banner {
-  background-size: cover;
-  background-position: center;
   padding: 176px 0;
-  margin-bottom: 40px;
   height: 640px;
   &::after {
     content: "";
@@ -16,6 +13,7 @@
     right: 0;
     position: absolute;
     z-index: -1;
+    height: 640px;
   }
 }
 
