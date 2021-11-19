@@ -7,4 +7,7 @@ Rails.application.routes.draw do
     end
   end
   get '/dashboard', to: 'dashboard#show'
+
+  patch 'reservations/:id/accept', to: 'offers#accept', as: 'accept_reservation'
+  patch 'reservations/:id/reject', to: 'offers#reject', as: 'reject_reservation'
 end
