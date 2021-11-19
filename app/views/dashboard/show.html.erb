@@ -45,11 +45,21 @@
             <i class="far fa-calendar"></i>
             <p class="icon-p"><%= reservation.start_date.to_date.to_formatted_s(:rfc822) %> - <%= reservation.end_date.to_date.to_formatted_s(:rfc822) %></p>
           </div>
-            <div class="icon-info">
-              <i class="fas fa-euro-sign"></i>
-              <p class="icon-p"><%= ((reservation.end_date.to_time - reservation.start_date.to_time) / 60000).round * reservation.offer.price%></p>
-            </div>
+          <div class="icon-info">
+              <% if  reservation.status == "rejected"%>
+                <i class="far fa-frown"></i>
+              <% elsif  reservation.status == "accepted"%>
+                <i class="far fa-smile"></i>
+              <% else%>
+                <i class="far fa-question-circle"></i>
+              <% end %>
+              <p class="icon-p"><%= reservation.status.capitalize %></p>
           </div>
+          <div class="icon-info">
+            <i class="fas fa-euro-sign"></i>
+            <p class="icon-p"><%= ((reservation.end_date.to_time - reservation.start_date.to_time) / 60000).round * reservation.offer.price%></p>
+          </div>
+        </div>
       <% end %>
     </div>
     <%= link_to 'Find a new offer', offers_path, class: "back-button" %>
