@@ -73,7 +73,7 @@
         <h4 class="res-heading">No reservations</h4>
       <% else %>
         <% @my_incoming_reservations.each do |reservation| %>
-        <div>
+        <div class="dash-offer-card">
           <%= link_to offer_path(reservation.offer) do %>
             <h4 class="res-heading"><%= reservation.offer.name.upcase %></h4>
           <% end %>
