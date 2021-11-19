@@ -8,13 +8,14 @@
         <h4 class="res-heading">No offers</h4>
       <% end %>
       <% @my_offers.each do |offer| %>
-        <div>
+        <div class="dash-offer-card">
           <%= link_to offer_path(offer) do %>
             <h4 class="res-heading"><%= offer.name.upcase %></h4>
           <% end %>
+          <p>Posted on: <%= offer.created_at.to_date.to_formatted_s(:rfc822) %></p>
           <p><%= offer.description %></p>
+          <p class="card-price"><%= offer.price.to_i %>€ / day</p>
         </div>
-        <p class="card-price"><%= offer.price.to_i %>€ / day</p>
       <% end %>
     </div>
     <%= link_to "Create an Offer", new_offer_path, class: "back-button" %>
