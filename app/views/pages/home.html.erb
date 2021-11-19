@@ -32,8 +32,10 @@
       </div>
     <% end %>
     </div>
+    <%= link_to "Not sure? See all available offers", offers_path, class: "offers-link-homepage" %></p>
   </div>
 </div>
+
 
 <% if user_signed_in? %>
   <h2 class="inspiration-heading">Need inspiration? Discover sports equipment rentals near <%= current_user.address.capitalize %> 👇</h2>
