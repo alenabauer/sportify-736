@@ -18,11 +18,12 @@
   color: $aero-blue;
   display: flex;
   align-items: baseline;
-  font-size: 16px;
+  font-size: 24px;
   transition: .5s;
+  font-family: 'Yellowtail', cursive;
   i {
     font-size: 24px;
-    margin-right: 8px;
+    margin-right: 2px;
   }
   &:hover {
     color: $tomato;
