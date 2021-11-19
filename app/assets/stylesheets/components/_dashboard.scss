@@ -45,9 +45,15 @@
 .reservation-info {
   text-align: left;
   padding: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
   color: $indigo-blue;
   border-bottom: 1px solid $tomato;
+  .dash-offer-card {
+    margin-bottom: 32px;
+    &:last-child {
+      margin-bottom: 16px;
+    }
+  }
 }
 
 .reservation-info i {
