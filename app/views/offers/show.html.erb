@@ -11,7 +11,8 @@
             <%= cl_image_tag photo.key %>
           <% end %>
         <% else  %>
-          <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt ="pic" class="border">
+          <%= image_tag "nophoto.svg", alt: "no photo submitted img" %>
+          <%# <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt ="pic" class="border"> %>
         <% end %>
     </div>
   <h2 class="text-center"> <%= @offer.name %> </h2>
@@ -25,8 +26,13 @@
     </div>
     <% if @reservation.id %>
       <div class="show-confirmation">
-        <p class="message"> You've successfully rented <%= @offer.equipment_type.downcase %> from <%= @offer.user.first_name.capitalize %> for the following dates: </p>
-        <p><%= @reservation.start_date.to_date.to_formatted_s(:long_ordinal) %> - <%= @reservation.end_date.to_date.to_formatted_s(:long_ordinal) %></p>
+        <% if @reservation.status == "accepted" %>
+          <p class="message"> You've successfully rented <%= @offer.equipment_type.downcase %> from <%= @offer.user.first_name.capitalize %> for the following dates: </p>
+          <p><%= @reservation.start_date.to_date.to_formatted_s(:long_ordinal) %> - <%= @reservation.end_date.to_date.to_formatted_s(:long_ordinal) %></p>
+        <% elsif @reservation.status == "Pending" %>
+          <p class="message">We've sent your request to <%= @offer.user.first_name.capitalize %>.</p>
+        <% end %>
+
       </div>
     <% else %>
       <div id="reservation-form">

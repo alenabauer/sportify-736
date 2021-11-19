@@ -31,3 +31,12 @@
   font-size: 20px;
   color: white;
 }
+
+.offers-link-homepage {
+  font-size: 15px;
+  text-decoration: none;
+  color: $aero-blue;
+  &:hover {
+    color: $tomato;
+  }
+}
