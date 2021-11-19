@@ -43,11 +43,11 @@
 }
 
 .reservation-info {
-  border-bottom: 1px solid $tomato;
   text-align: left;
   padding: 8px;
   margin-bottom: 16px;
   color: $indigo-blue;
+  border-bottom: 1px solid $tomato;
 }
 
 .reservation-info i {
@@ -69,6 +69,7 @@
   display: flex;
   align-items: center;
   margin-left: 0;
+  margin-bottom: 16px;
   .dashboard-avatar {
       margin-right: 10px;
       border-radius: 50%;
@@ -86,9 +87,9 @@
 .icon-info {
   display: flex;
   align-items: center;
-  .icon-info p {
-    justify-content: center;
-    align-items: center;
+  margin-bottom: 16px;
+  .icon-p {
+    margin: 0 !important;
   }
 }
 
