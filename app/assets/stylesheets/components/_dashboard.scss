@@ -11,6 +11,7 @@
   font-weight: bold;
   color: $indigo-blue;
   padding-bottom: 10px;
+  border-bottom: 1px solid $tomato;
 }
 
 .res-heading {
@@ -42,7 +43,7 @@
 }
 
 .reservation-info {
-  border-bottom: 3px solid $tomato;
+  border-bottom: 1px solid $tomato;
   text-align: left;
   padding: 8px;
   margin-bottom: 16px;
@@ -88,5 +89,27 @@
   .icon-info p {
     justify-content: center;
     align-items: center;
+  }
+}
+
+.accept-reject-btns {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  a {
+    padding: 8px 32px;
+    border-radius: 16px;
+    box-shadow: 2px 2px 16px hsla(0, 0%, 0%, .5);
+  }
+  .accept-btn {
+    background: $aero-blue;
+    font-weight: 700;
+    &:hover {
+      color: white;
+      background: $tomato;
+    }
+  }
+  .reject-btn {
+    background: white;
   }
 }

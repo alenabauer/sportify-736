@@ -72,6 +72,18 @@ class OffersController < ApplicationController
     end
   end
 
+  def accept
+    @reservation = Reservation.find(params[:id])
+    @reservation.update(status: "accepted")
+    redirect_to dashboard_path
+  end
+
+  def reject
+    @reservation = Reservation.find(params[:id])
+    @reservation.update(status: "rejected")
+    redirect_to dashboard_path
+  end
+
   private
 
   def offer_params
