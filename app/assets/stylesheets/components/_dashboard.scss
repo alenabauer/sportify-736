@@ -49,6 +49,11 @@
   color: $indigo-blue;
 }
 
+.reservation-info i {
+  font-size: 30px;
+  padding-right: 10px;
+}
+
 .reservation-info a {
   color: $indigo-blue;
   text-decoration: none;
@@ -57,4 +62,31 @@
     &:hover {
       color: $tomato
     }
+}
+
+.display-name {
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+  .dashboard-avatar {
+      margin-right: 10px;
+      border-radius: 50%;
+      background: $indigo-blue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      font-weight: 700;
+      color: $gold;
+    }
+}
+
+.icon-info {
+  display: flex;
+  align-items: center;
+  .icon-info p {
+    justify-content: center;
+    align-items: center;
+  }
 }
