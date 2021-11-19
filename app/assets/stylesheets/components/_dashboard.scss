@@ -50,6 +50,11 @@
   color: $indigo-blue;
 }
 
+.reservation-info i {
+  font-size: 30px;
+  padding-right: 10px;
+}
+
 .reservation-info a {
   color: $indigo-blue;
   text-decoration: none;
@@ -60,18 +65,31 @@
     }
 }
 
-.dashboard-avatar {
-  color: $indigo-blue;
-  border-radius: 50%;
-    background: $aero-blue;
-    width: 40px;
-    height: 40px;
-    margin: 0 auto;
-    display: flex;
+.display-name {
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+  .dashboard-avatar {
+      margin-right: 10px;
+      border-radius: 50%;
+      background: $indigo-blue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      font-weight: 700;
+      color: $gold;
+    }
+}
+
+.icon-info {
+  display: flex;
+  align-items: center;
+  .icon-info p {
     justify-content: center;
     align-items: center;
-    font-weight: 700;
-    box-shadow: 2px 2px 16px hsla(0, 0%, 0%, .5);
+  }
 }
 
 .accept-reject-btns {

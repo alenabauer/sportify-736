@@ -30,11 +30,18 @@
               <%= link_to offer_path(reservation.offer) do %>
                 <h4 class="res-heading"><%= reservation.offer.name.upcase %></h4>
               <% end %>
-                <p>Rented from: <i class="dashboard-avatar"> <%= reservation.offer.user.first_name.chars.first.capitalize %><%= reservation.offer.user.last_name.chars.first.capitalize %> </i> </p>
-                <p >Location: <i class="fas fa-map-pin"></i> </i><%= reservation.offer.user.address.capitalize %> </p>
-                <p> Dates: <i class="far fa-calendar-alt"></i> </i><%= reservation.start_date.to_date.to_formatted_s(:long_ordinal) %> - <%= reservation.end_date.to_date.to_formatted_s(:long_ordinal) %></p>
+                <p>
+                  <div class="display-name">
+                    <div class="dashboard-avatar">
+                      <%= reservation.offer.user.first_name.chars.first.capitalize %><%= reservation.offer.user.last_name.chars.first.capitalize %>
+                    </div>
+                    <%= reservation.offer.user.first_name.capitalize %>
+                  </div>
+                </p>
+                <div class="icon-info"><i class="fas fa-map-marker-alt"></i><p><%= reservation.offer.user.address.capitalize %></p></div>
+                <p><i class="far fa-calendar"></i><%= reservation.start_date.to_date.to_formatted_s(:rfc822) %> - <%= reservation.end_date.to_date.to_formatted_s(:rfc822) %></p>
+                <p> <i class="fas fa-euro-sign"></i><%= ((reservation.end_date.to_time - reservation.start_date.to_time) / 60000).round * reservation.offer.price%></p>
               </div>
-              <p> Total price </p>
             </div>
       <% end %>
     <%= link_to 'Find a new offer', offers_path, class: "back-button" %>
