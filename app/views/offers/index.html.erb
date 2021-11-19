@@ -1,21 +1,23 @@
 
 <div class="container">
-  <div class="my-index">
-    <div>
-      <h2 class="form-heading offers-heading">Sportify Offers</h2>
-      <% if @offers.length == 0 %>
-        <p>No offers found matching your search</p>
-      <% end %>
-      <div class="my-cards">
-        <% @offers.each do |offer| %>
-          <%= render 'card', offer: offer %>
-        <% end %>
+    <% if @offers.length == 0 %>
+      <p class="not-found-msg">Sorry, nothing found.</p>
+      <%= link_to "See all available offers", offers_path, class: "offers-link" %>
+    <% else %>
+      <div class="my-index">
+        <div>
+          <h2 class="form-heading offers-heading">Sportify Offers</h2>
+          <div class="my-cards">
+            <% @offers.each do |offer| %>
+              <%= render 'card', offer: offer %>
+            <% end %>
+          </div>
+        </div>
+        <div class= "my-map"
+            data-controller="mapbox"
+            data-mapbox-markers-value="<%= @markers.to_json %>"
+            data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
       </div>
-    </div>
-    <div class= "my-map"
-        data-controller="mapbox"
-        data-mapbox-markers-value="<%= @markers.to_json %>"
-        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-  </div>
+    <% end %>
 </div>

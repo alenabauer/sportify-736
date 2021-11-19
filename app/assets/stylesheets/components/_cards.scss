@@ -1,6 +1,6 @@
 .card-product {
   height: 200px;
-  background: linear-gradient(135deg, hsla(162, 56%, 82%, 1) 0%, hsla(193, 31%, 43%, 1) 24%, hsla(203, 100%, 18%, 1) 73%);
+  background: #003252;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
@@ -10,8 +10,8 @@
   gap: 8px;
   color: white;
   &:hover {
-    background: linear-gradient(135deg, hsla(34, 87%, 76%, 1) 0%, hsla(9, 92%, 64%, 1) 45%, hsla(9, 45%, 30%, 1) 92%);
-    transform: scale(1.05)
+    background: #003F66;
+    transform: scale(1.03)
   }
 }
 

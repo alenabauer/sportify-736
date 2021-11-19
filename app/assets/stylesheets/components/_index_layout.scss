@@ -27,3 +27,19 @@
   color: white;
   margin-bottom: 36px;
 }
+
+.not-found-msg {
+  text-align: center;
+  margin-top: 64px;
+  color: white;
+  font-size: 20px;
+}
+.offers-link {
+  color: $aero-blue;
+  display: block;
+  text-align: center;
+  font-weight: 300;
+  &:hover {
+    color: white;
+  }
+}

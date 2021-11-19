@@ -9,19 +9,29 @@
     background: $gold;
     padding: 16px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     border-radius: 16px;
     box-shadow: 2px 2px 16px hsla(0, 0%, 0%, .5);
     transition: .5s;
     &:hover {
-      transform: scale(1.05);
-      background: $tomato;
+      transform: scale(1.02);
+      background: #F5AE51;
       cursor: pointer;
     }
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    img {
+      width: 90%;
+    }
   }
-  .homepage-card img {
-    width: 100%;
+  p {
+    color: $indigo-blue;
+    font-size: 20px;
   }
 }
 
