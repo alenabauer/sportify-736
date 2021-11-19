@@ -78,7 +78,6 @@
             <h4 class="res-heading"><%= reservation.offer.name.upcase %></h4>
           <% end %>
           <p><%= reservation.user.first_name.capitalize %> wants to reserve your <%= reservation.offer.equipment_type %> from <%= reservation.start_date.to_date.to_formatted_s(:long_ordinal) %> to <%= reservation.end_date.to_date.to_formatted_s(:long_ordinal) %></p>
-        </div>
         <% if reservation.status == "Pending" %>
           <div class="accept-reject-btns">
             <%= link_to accept_reservation_path(reservation), method: 'patch', class: "accept-btn" do %>
@@ -88,6 +87,7 @@
               REJECT
             <% end %>
           </div>
+        </div>
         <% else %>
           <p>You've <%= reservation.status %> the reservation </p>
         <% end %>
