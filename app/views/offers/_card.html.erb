@@ -1,4 +1,4 @@
-<%= link_to offer_path(offer) do %>
+<%= link_to offer_path(offer), class: "card-link" do %>
   <div class="card-product">
     <% if offer.photos.attached? %>
       <%= cl_image_tag offer.photos[0].key, height: 300, width: 400, crop: :fill %>
