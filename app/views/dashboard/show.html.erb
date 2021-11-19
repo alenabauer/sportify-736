@@ -1,11 +1,11 @@
-<h1 class="dash-heading"> <%= current_user.first_name%>'s Dashboard </h1>
+<h1 class="dash-heading"> <%= current_user.first_name.capitalize%>'s Dashboard </h1>
 
 <div class="dash-container">
    <div class="dash-item">
     <h2 class="dash-item-heading">My offers</h2>
     <div class="reservation-info">
       <% if @my_offers == [] %>
-        <h3>No offers</h3>
+        <h4 class="res-heading">No offers</h4>
       <% end %>
       <% @my_offers.each do |offer| %>
           <div>
@@ -30,9 +30,9 @@
               <%= link_to offer_path(reservation.offer) do %>
                 <h4 class="res-heading"><%= reservation.offer.name.upcase %></h4>
               <% end %>
-                <p>Rented from: <%= reservation.offer.user.first_name.capitalize %></p>
-                <p>Location: <%= reservation.offer.user.address.capitalize %></p>
-                <p><%= reservation.start_date.to_date.to_formatted_s(:long_ordinal) %> - <%= reservation.end_date.to_date.to_formatted_s(:long_ordinal) %></p>
+                <p>Rented from: <i class="dashboard-avatar"> <%= reservation.offer.user.first_name.chars.first.capitalize %><%= reservation.offer.user.last_name.chars.first.capitalize %> </i> </p>
+                <p >Location: <i class="fas fa-map-pin"></i> </i><%= reservation.offer.user.address.capitalize %> </p>
+                <p> Dates: <i class="far fa-calendar-alt"></i> </i><%= reservation.start_date.to_date.to_formatted_s(:long_ordinal) %> - <%= reservation.end_date.to_date.to_formatted_s(:long_ordinal) %></p>
               </div>
               <p> Total price </p>
             </div>
